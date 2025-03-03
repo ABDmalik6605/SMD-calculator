@@ -2,6 +2,8 @@ package com.example.smdassignemt1;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -111,6 +113,9 @@ public class MainActivity extends AppCompatActivity {
             operation = op;
             isOperationClicked = true;
         }
+        else{
+            Toast.makeText(getApplicationContext(),"Enter some number",Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void onEqualClicked() {
@@ -141,6 +146,9 @@ public class MainActivity extends AppCompatActivity {
             operation = "";
             isOperationClicked = true;
         }
+        else{
+            Toast.makeText(getApplicationContext(),"Enter some number",Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void onCClicked() {
@@ -157,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void onBackspaceClicked() {
-        if (currentNumber.length() > 0) {
+        if (!currentNumber.isEmpty()) {
             currentNumber = currentNumber.substring(0, currentNumber.length() - 1);
             resultDisplay.setText(currentNumber);
         }
@@ -169,6 +177,9 @@ public class MainActivity extends AppCompatActivity {
             double result = number / 100;
             resultDisplay.setText(String.valueOf(result));
             currentNumber = String.valueOf(result);
+        }
+        else{
+            Toast.makeText(getApplicationContext(),"Enter some number",Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -183,6 +194,9 @@ public class MainActivity extends AppCompatActivity {
                 resultDisplay.setText("Error");
             }
         }
+        else{
+            Toast.makeText(getApplicationContext(),"Enter some number",Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void onSquareClicked() {
@@ -191,6 +205,9 @@ public class MainActivity extends AppCompatActivity {
             double result = number * number;
             resultDisplay.setText(String.valueOf(result));
             currentNumber = String.valueOf(result);
+        }
+        else{
+            Toast.makeText(getApplicationContext(),"Enter some number",Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -205,6 +222,9 @@ public class MainActivity extends AppCompatActivity {
                 resultDisplay.setText("Error");
             }
         }
+        else{
+            Toast.makeText(getApplicationContext(),"Enter some number",Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void onPlusMinusClicked() {
@@ -214,12 +234,18 @@ public class MainActivity extends AppCompatActivity {
             resultDisplay.setText(String.valueOf(number));
             currentNumber = String.valueOf(number);
         }
+        else{
+            Toast.makeText(getApplicationContext(),"Enter some number",Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void onDotClicked() {
         if (!currentNumber.contains(".")) {
             currentNumber += ".";
             resultDisplay.setText(currentNumber);
+        }
+        else{
+            Toast.makeText(getApplicationContext(),"Enter some number",Toast.LENGTH_SHORT).show();
         }
     }
 
